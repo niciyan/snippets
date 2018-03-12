@@ -1,0 +1,30 @@
+snippet three
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.js"></script>
+
+snippet render-field
+    {% macro render_field(field) %}
+      <dt>{{ field.label }}
+      <dd>{{ field(**kwargs)|safe }}
+      {% if field.errors %}
+        <ul class=errors>
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      </dd>
+    {% endmacro %}
+
+snippet render-form
+    {% macro render_field(field) %}
+      <dt>{{ field.label }}
+      <dd>{{ field(**kwargs)|safe }}
+      {% if field.errors %}
+        <ul class=errors>
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      </dd>
+    {% endmacro %}
