@@ -1,0 +1,6 @@
+snippet gobuild
+    .PHONY: build
+    build:
+        goimports -w .
+        go vet .
+        go build
