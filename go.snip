@@ -6,7 +6,7 @@ options     head
 snippet     log-printf
 abbr        log.Printf()
 options     head
-    log.Printf("${1}\n", ${2})
+    log.Printf("${0}\n", )
 
 snippet     package-main-simple
 options     head
@@ -18,7 +18,7 @@ options     head
     )
 
     func main() {
-
+        ${0}
     }
 
 snippet if-err-fatal
@@ -26,6 +26,13 @@ snippet if-err-fatal
 		log.Fatal(${0}, err)
 	}
 
+snippet     if-err-return
+abbr        if err != nil { return err }
+options     head
+	if err != nil {
+		return err
+	}
+    
 
 snippet     fmt-printf
 abbr        fmt.Printf()
