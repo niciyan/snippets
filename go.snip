@@ -7,3 +7,27 @@ snippet     log-printf
 abbr        log.Printf()
 options     head
     log.Printf("${1}\n", ${2})
+
+snippet     package-main-simple
+options     head
+    package main
+
+    import (
+        "fmt"
+        "log"
+    )
+
+    func main() {
+
+    }
+
+snippet if-err-fatal
+	if err != nil {
+		log.Fatal(${0}, err)
+	}
+
+
+snippet     fmt-printf
+abbr        fmt.Printf()
+options     head
+    fmt.Printf(${0})
